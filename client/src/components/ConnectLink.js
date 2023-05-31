@@ -1,8 +1,8 @@
 import React from 'react';
 
-const ConnectLink = ({ connectToMetaMask }) => {
+const ConnectLink = ({ connect }) => {
   return (
-    <a href="#" className="link-button" onClick={connectToMetaMask}>
+    <a href="#" className="link-button" onClick={connect}>
       Connect to MetaMask
     </a>
   );

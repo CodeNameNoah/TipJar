@@ -35,7 +35,7 @@ const TipCreator = () => {
         console.error('User denied account access or an error occurred');
       }
     } else {
-      console.log('Non-Ethereum browser detected. You should consider trying MetaMask!');
+      console.log('Non-Ethereum browser detected!');
     }
   };
 
