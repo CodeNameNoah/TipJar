@@ -2,7 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const jwt = require('jsonwebtoken');
 const tipRoutes = require('./routes/tipRoutes');
-const authenticationMiddleware = require('./middleware/authentication');
+//const authenticationMiddleware = require('./middleware/authentication');
 const { ApolloServer, gql } = require('apollo-server-express');
 const Tip = require('./models/Tip'); // import your Mongoose Tip model
 
@@ -55,14 +55,14 @@ const resolvers = {
 // Create Apollo Server
 const server = new ApolloServer({ typeDefs, resolvers });
 
-// Start the Apollo Server and apply middleware to Express app
-server.start().then(() => {
-  server.applyMiddleware({ app });
-});
-
 // Middleware
 app.use(express.json());
-app.use(authenticationMiddleware);
+//app.use(authenticationMiddleware); // Protects all subsequent routes
+
+// Start the Apollo Server and apply middleware to Express app
+server.start().then(() => {
+ // server.applyMiddleware({ app });
+});
 
 // Routes
 app.use('/api/tips', tipRoutes);

@@ -1,9 +1,9 @@
-const jwt = require('jsonwebtoken');
+/*const jwt = require('jsonwebtoken');
 
 const authenticationMiddleware = (req, res, next) => {
   const token = req.headers.authorization || '';
   try {
-    const user = jwt.verify(token, process.env.JWT_SECRET);
+    const user = jwt.verify(token, process.env.REACT_APP_JWT_TOKEN);
     req.user = user;
     next();
   } catch (error) {
@@ -17,4 +17,4 @@ const authenticationMiddleware = (req, res, next) => {
   }
 };
 
-module.exports = authenticationMiddleware;
+module.exports = authenticationMiddleware;*/
