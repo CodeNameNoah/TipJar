@@ -61,7 +61,7 @@ app.use(express.json());
 
 // Start the Apollo Server and apply middleware to Express app
 server.start().then(() => {
- // server.applyMiddleware({ app });
+ server.applyMiddleware({ app });
 });
 
 // Routes
