@@ -11,7 +11,7 @@ const SendForm = ({ address, setAddress, amount, setAmount, sendTip }) => {
         value={address}
         onChange={(e) => setAddress(e.target.value)}
       />
-      <label htmlFor="amountInput">Tip Amount (in ETHER)</label>
+      <label htmlFor="amountInput">Tip Amount (in ETH)</label>
       <input
         type="number"
         id="amountInput"
