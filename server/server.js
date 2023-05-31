@@ -31,6 +31,7 @@ const typeDefs = gql`
 
   type Query {
     hello: String
+    getTip(id: ID!): Tip
   }
 
   type Mutation {
@@ -38,10 +39,13 @@ const typeDefs = gql`
   }
 `;
 
-// Define resolvers
 const resolvers = {
   Query: {
     hello: () => 'Hello world!',
+    getTip: async (_, { id }) => {
+      const tip = await Tip.findById(id);
+      return tip;
+    },
   },
   Mutation: {
     createTip: async (_, { recipient, amount }) => {
@@ -51,6 +55,7 @@ const resolvers = {
     },
   },
 };
+
 
 // Create Apollo Server
 const server = new ApolloServer({ typeDefs, resolvers });
