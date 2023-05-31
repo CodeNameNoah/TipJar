@@ -44,17 +44,16 @@ const TipCreator = () => {
       console.log('Please set both the address and the amount');
       return;
     }
-
-    if (window.ethers) {
+  
+    if (window.ethereum) {
       try {
-        const amountInWei = ethers.utils.parseEther(amount.toString()).toString();
         const transaction = await ethereum.request({
           method: 'eth_sendTransaction',
           params: [
             {
               from: ethereum.selectedAddress,
               to: address,
-              value: amountInWei,
+              value: ethers.utils.parseUnits(amount.toString(), "ether").toHexString(),
             },
           ],
         });
@@ -66,6 +65,7 @@ const TipCreator = () => {
       console.log('Ethers library not loaded');
     }
   };
+  
 
   return (
     <div className="container">

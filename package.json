@@ -3,20 +3,25 @@
     "version": "1.0.0",
     "description": "Tip Creator project",
     "scripts": {
-      "start": "cd client && npm install && npm start",
-      "server": "nodemon server/server.js",
-      "build": "cd client && npm run build",
-      "dev": "concurrently \"npm run server\" \"npm run start --prefix client\""
+        "start": "cd client && npm install && npm start",
+        "server": "nodemon server/server.js",
+        "build": "cd client && npm run build",
+        "dev": "concurrently \"npm run server\" \"npm run start --prefix client\""
     },
     "repository": {
-      "type": "git",
-      "url": "git+https://github.com/your-username/tip-creator.git"
+        "type": "git",
+        "url": "git+https://github.com/your-username/tip-creator.git"
     },
     "author": "Your Name",
     "license": "MIT",
     "bugs": {
-      "url": "https://github.com/your-username/tip-creator/issues"
+        "url": "https://github.com/your-username/tip-creator/issues"
     },
-    "homepage": "https://github.com/your-username/tip-creator#readme"
-  }
-  
+    "homepage": "https://github.com/your-username/tip-creator#readme",
+    "dependencies": {
+        "apollo-server-express": "^3.12.0",
+        "express": "^4.18.2",
+        "jsonwebtoken": "^9.0.0",
+        "mongoose": "^7.2.2"
+    }
+}
