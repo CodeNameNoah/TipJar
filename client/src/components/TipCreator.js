@@ -136,15 +136,14 @@ const TipCreator = () => {
           const responseBody = await response.json();
     
           console.log(responseBody);
-        } else {
-          alert('The transaction failed.');
+      
         }
       } catch (error) {
         // Check if the error is due to insufficient funds
         if (error.message.includes('insufficient funds')) {
           setErrorMessage('You do not have enough Ethereum to send this tip.');
         } else if (error.message.includes('Already processing eth_requestAccounts')) {
-          setErrorMessage('MetaMask is currently processing a request. Please manually open the MetaMask extension from your browser extensions, then try again.');
+          setErrorMessage('MetaMask is currently processing a request. Please manually open the MetaMask extension from your browser extensions. When you press the send tip button again the same unlock screen will appear, jsut click the X on it and click send tip one more time.');
         } else {
           setErrorMessage('An unexpected error occurred while sending the tip.');
           console.error('An error occurred: ', error);
