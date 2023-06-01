@@ -23,6 +23,9 @@ const TipCreator = () => {
   const [address, setAddress] = useState('');
   const [amount, setAmount] = useState('');
   const [createTip, { data }] = useMutation(CREATE_TIP, { client });
+  const [errorMessage, setErrorMessage] = useState(''); 
+  // New state variable for error messages
+
 
   useEffect(() => {
     // Get Ethereum address from URL parameters
@@ -56,45 +59,60 @@ const TipCreator = () => {
   const connectToMetaMask = async () => {
     if (window.ethereum) {
       try {
-        await window.ethereum.request({ method: 'eth_requestAccounts' });
-        // Save connected state to localStorage
-        localStorage.setItem('connected', 'true');
-        setConnected(true);
+        const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
+        // If the request was successful, accounts is an array of account addresses
+        if (accounts.length > 0) {
+          // Save connected state to localStorage
+          localStorage.setItem('connected', 'true');
+          setConnected(true);
+        } else {
+          // If accounts is an error object, check for the -32002 error code
+          if (accounts.code === -32002) {
+            setErrorMessage('MetaMask is currently busy. Please manually open the MetaMask extension, then try again.');
+          } else {
+            setErrorMessage('An error occurred while connecting to MetaMask.');
+          }
+        }
       } catch (error) {
-        console.error('User denied account access or an error occurred');
+        setErrorMessage('An unexpected error occurred while connecting to MetaMask.');
+        console.error('An error occurred: ', error);
       }
     } else {
+      setErrorMessage('Non-Ethereum browser detected!');
       console.log('Non-Ethereum browser detected!');
     }
   };
+  
 
   const sendTip = async () => {
     if (!address || !amount) {
       alert('Please set both the address and the amount');
       return;
     }
-
+  
     if (window.ethereum) {
       try {
         // Get the user's account
         const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
         const account = accounts[0];
-
+  
         // Create a new ethers.js provider and signer
         const provider = new ethers.providers.Web3Provider(window.ethereum);
         const signer = provider.getSigner();
-
+  
         // Define the transaction
         const transaction = {
           to: address,
           value: ethers.utils.parseEther(amount)
         };
-
+  
         // Sign and send the transaction
         const tx = await signer.sendTransaction(transaction);
     
         // Wait for the transaction to be mined
-        const receipt = await tx.wait        // If the transaction was successful, save the tip in the database
+        const receipt = await tx.wait;
+        
+        // If the transaction was successful, save the tip in the database
         if (receipt.status === 1) {
           const response = await fetch('http://localhost:4000/graphql', {
             method: 'POST',
@@ -124,32 +142,37 @@ const TipCreator = () => {
       } catch (error) {
         // Check if the error is due to insufficient funds
         if (error.message.includes('insufficient funds')) {
-          alert('You do not have enough Ethereum to send this tip.');
+          setErrorMessage('You do not have enough Ethereum to send this tip.');
+        } else if (error.message.includes('Already processing eth_requestAccounts')) {
+          setErrorMessage('MetaMask is currently processing a request. Please manually open the MetaMask extension from your browser extensions, then try again.');
         } else {
-          console.error(error);
+          setErrorMessage('An unexpected error occurred while sending the tip.');
+          console.error('An error occurred: ', error);
         }
       }
     } else {
-      alert('Ethers library not loaded');
+      setErrorMessage('Non-Ethereum browser detected!');
     }
   };
   
+  
   return (
-   <div className="container">
-   <h1>Tip Creator</h1>
-   {!connected ? (
-     <ConnectLink connectToMetaMask={connectToMetaMask} />
-   ) : (
-     <SendForm
-       address={address}
-       setAddress={setAddress}
-       amount={amount}
-       setAmount={setAmount}
-       sendTip={sendTip}
-     />
-   )}
- </div>
-);
+    <div className="container">
+      <h1>Tip Creator</h1>
+      {errorMessage && <div className="error">{errorMessage}</div>} {/* Display the error message if there is one */}
+      {!connected ? (
+        <ConnectLink connectToMetaMask={connectToMetaMask} />
+      ) : (
+        <SendForm
+          address={address}
+          setAddress={setAddress}
+          amount={amount}
+          setAmount={setAmount}
+          sendTip={sendTip}
+        />
+      )}
+    </div>
+  );
 };
 
 export default TipCreator;

@@ -9,7 +9,30 @@ body {
 .container {
   width: 50%;
   margin: 0 auto;
+  align-items: center;
+  font-size: 24px; 
+  font-weight: bold;
 }
+
+.error {
+  color: red;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
 
 h1 {
   color: #1bc2f5;
@@ -20,9 +43,9 @@ h1 {
 
 .link-button {
   display: inline-block;
+ 
   width: 240px;
   height: 60px;
-  margin: 40px auto;
   background-color: #1bc2f5;
   text-align: center;
   border-radius: 10px;
@@ -52,6 +75,7 @@ input[type='text'],
 input[type='number'] {
   width: 100%;
   padding: 15px;
+  
   margin-bottom: 30px;
   border-radius: 5px;
   border: 1px solid #ccc;
