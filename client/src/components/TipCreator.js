@@ -79,7 +79,7 @@ const TipCreator = () => {
         console.error('An error occurred: ', error);
       }
     } else {
-      setErrorMessage('Non-Ethereum browser detected!');
+      setErrorMessage('Non-Ethereum browser detected! You MUST have the Metamask extension.');
       console.log('Non-Ethereum browser detected!');
     }
   };
