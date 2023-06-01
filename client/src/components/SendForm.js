@@ -22,8 +22,12 @@ const SendForm = ({ address, setAddress, amount, setAmount, sendTip }) => {
       <button type="button" onClick={sendTip}>
         Send Tip
       </button>
+      <div className="center-container">
+        <a href="https://github.com/CodeNameNoah/TransCrypt#readme" target="_blank" rel="noopener noreferrer" className="help-button">Help</a>
+      </div>
     </div>
   );
 };
 
 export default SendForm;
+
