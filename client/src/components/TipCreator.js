@@ -108,35 +108,26 @@ const TipCreator = () => {
   
         // Sign and send the transaction
         const tx = await signer.sendTransaction(transaction);
-    
+  
         // Wait for the transaction to be mined
-        const receipt = await tx.wait;
-        
+        const receipt = await tx.wait();
+  
         // If the transaction was successful, save the tip in the database
         if (receipt.status === 1) {
-          const response = await fetch('http://localhost:4000/graphql', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-              Accept: 'application/json',
-            },
-            body: JSON.stringify({
-              query: `
-                mutation {
-                  createTip(recipient: "${address}", amount: ${amount}) {
-                    id
-                    recipient
-                    amount
-                  }
-                }
-              `,
-            }),
-          });
-    
-          const responseBody = await response.json();
-    
-          console.log(responseBody);
-      
+          try {
+            // Replace the fetch call with a call to the createTip function
+            const result = await createTip({
+              variables: {
+                recipient: address,
+                amount: parseFloat(amount)  // Ensure the amount is a number
+              },
+            });
+  
+            console.log(result);
+          } catch (error) {
+            // Handle any errors from the mutation
+            console.error('An error occurred while saving the tip: ', error);
+          }
         }
       } catch (error) {
         // Check if the error is due to insufficient funds
@@ -152,6 +143,7 @@ const TipCreator = () => {
       setErrorMessage('Non-Ethereum browser detected! Once connected reload the page !');
     }
   };
+  
   
   
   return (
