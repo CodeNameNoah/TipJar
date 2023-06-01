@@ -65,6 +65,7 @@ const TipCreator = () => {
           // Save connected state to localStorage
           localStorage.setItem('connected', 'true');
           setConnected(true);
+          setErrorMessage(''); // clear the error message
         } else {
           // If accounts is an error object, check for the -32002 error code
           if (accounts.code === -32002) {
@@ -82,6 +83,7 @@ const TipCreator = () => {
       console.log('Non-Ethereum browser detected!');
     }
   };
+  
   
 
   const sendTip = async () => {
