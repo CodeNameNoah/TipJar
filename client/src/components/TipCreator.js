@@ -39,12 +39,24 @@ const TipCreator = () => {
     if (localStorage.getItem('connected') === 'true') {
       setConnected(true);
     }
+
+    if (window.ethereum) {
+      window.ethereum.on('accountsChanged', function (accounts) {
+        // If user locks their MetaMask wallet, it will disconnect from the dApp
+        if (accounts.length > 0) {
+          setConnected(true);
+        } else {
+          setConnected(false);
+          alert('Your MetaMask is locked. Please unlock it to continue.');
+        }
+      });
+    }
   }, []);
 
   const connectToMetaMask = async () => {
     if (window.ethereum) {
       try {
-        await window.ethereum.enable();
+        await window.ethereum.request({ method: 'eth_requestAccounts' });
         // Save connected state to localStorage
         localStorage.setItem('connected', 'true');
         setConnected(true);
@@ -61,30 +73,28 @@ const TipCreator = () => {
       alert('Please set both the address and the amount');
       return;
     }
-  
+
     if (window.ethereum) {
       try {
         // Get the user's account
         const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
         const account = accounts[0];
-  
+
         // Create a new ethers.js provider and signer
         const provider = new ethers.providers.Web3Provider(window.ethereum);
         const signer = provider.getSigner();
-  
+
         // Define the transaction
         const transaction = {
           to: address,
           value: ethers.utils.parseEther(amount)
         };
-  
+
         // Sign and send the transaction
         const tx = await signer.sendTransaction(transaction);
     
         // Wait for the transaction to be mined
-        const receipt = await tx.wait();
-  
-        // If the transaction was successful, save the tip in the database
+        const receipt = await tx.wait        // If the transaction was successful, save the tip in the database
         if (receipt.status === 1) {
           const response = await fetch('http://localhost:4000/graphql', {
             method: 'POST',
@@ -124,9 +134,6 @@ const TipCreator = () => {
     }
   };
   
-  
-  
-
   return (
    <div className="container">
    <h1>Tip Creator</h1>
