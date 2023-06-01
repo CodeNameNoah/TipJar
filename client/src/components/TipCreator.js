@@ -74,7 +74,7 @@ const TipCreator = () => {
           }
         }
       } catch (error) {
-        setErrorMessage('An unexpected error occurred while connecting to MetaMask.');
+        setErrorMessage('MetaMask is currently processing a request. Please manually open the MetaMask extension from your browser extensions.');
         console.error('An error occurred: ', error);
       }
     } else {
