@@ -122,6 +122,11 @@ const TipCreator = () => {
                 amount: parseFloat(amount)  // Ensure the amount is a number
               },
             });
+
+            // If the mutation was successful, inform the user
+      if (result.data) {
+        alert('Your transaction was successful!'); 
+      }
   
             console.log(result);
           } catch (error) {
