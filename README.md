@@ -38,9 +38,10 @@ The application should now be running at `http://localhost:3000` `http://localho
 
 ### Connecting to MetaMask
 
-When you open the application, you will see a button to connect to MetaMask. 
+1. When you open the application, you will see a button to connect to MetaMask. 
 Clicking on this button will prompt you to connect with your MetaMask account.
-If loaded on the home screen where you enter the address and amount , you can enter those fields and then press send tip and it'll give you the direction to connect to MetaMask with our application as well.
+
+2. Most users will be loaded on the home page when you first visit our site. simply just fill in the address and amount fields and click "send tip". A window will pop up for you to connect your MetaMask wallet with our application.
 
 ![ezgif com-video-to-gif (6)](https://github.com/CodeNameNoah/TipJar/assets/128002901/ce70cda0-92a7-4e41-80a1-1ef7642ecd9e)
 
