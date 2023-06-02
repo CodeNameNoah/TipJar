@@ -1,6 +1,6 @@
-# TransCrypt: Ethereum Tipping Made Simple
+# TipJar: Ethereum Tipping Made Simple
 
-TransCrypt is a robust and user-friendly decentralized application (dApp) built on Ethereum and React.js that simplifies the process of sending tips in Ether. With an intuitive interface and seamless integration with MetaMask, it provides a quick and easy way for users to tip one another for their contributions.
+TipJar is a robust and user-friendly decentralized application (dApp) built on Ethereum and React.js that simplifies the process of sending tips in Ether. With an intuitive interface and seamless integration with MetaMask, it provides a quick and easy way for users to tip one another for their contributions.
 
 ## Features
 
@@ -13,7 +13,7 @@ TransCrypt is a robust and user-friendly decentralized application (dApp) built 
 
 ### Installation
 
-1. Clone the repository: `git clone https://github.com/CodeNameNoah/TransCrypt.git`
+1. Clone the repository: `git clone https://github.com/CodeNameNoah/TipJar.git`
 2. Install the dependencies: `npm install`
 3. Start the application: `npm run dev`
    
@@ -25,7 +25,7 @@ When you open the application, you will see a button to connect to MetaMask.
 Clicking on this button will prompt you to connect with your MetaMask account.
 If loaded on the home screen where you enter the address and amount , you can enter those fields and then press send tip and it'll give you the direction to connect with MetaMask and our application as well.
 
-![ezgif com-video-to-gif (6)](https://github.com/CodeNameNoah/TransCrypt/assets/128002901/ce70cda0-92a7-4e41-80a1-1ef7642ecd9e)
+![ezgif com-video-to-gif (6)](https://github.com/CodeNameNoah/TipJar/assets/128002901/ce70cda0-92a7-4e41-80a1-1ef7642ecd9e)
 
 ![ezgif com-video-to-gif (7)](https://github.com/CodeNameNoah/TransCrypt/assets/128002901/89ee3413-0051-4900-aedc-db2650cddd69)
 
