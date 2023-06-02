@@ -66,7 +66,7 @@ If you want to disconnect your MetaMask account from TipJar, follow these steps:
 
 ## Future Improvements
 
-We're always looking to make TransCrypt better and more efficient. Some potential future improvements include:
+We're always looking to make TipJar better and more efficient. Some potential future improvements include:
 
 - Integration with other Ethereum wallets.
 - Support for tipping in ERC-20 tokens.
