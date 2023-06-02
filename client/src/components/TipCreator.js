@@ -155,7 +155,7 @@ const TipCreator = () => {
   
   return (
     <div className="container">
-      <h1>Tip Creator</h1>
+      <h1>TipJar</h1>
       {errorMessage && <div className="error">{errorMessage}</div>} {/* Display the error message if there is one */}
       {!connected ? (
         <ConnectLink connectToMetaMask={connectToMetaMask} />
