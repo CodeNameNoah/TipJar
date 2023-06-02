@@ -17,7 +17,7 @@ TransCrypt is a robust and user-friendly decentralized application (dApp) built 
 2. Install the dependencies: `npm install`
 3. Start the application: `npm run dev`
    
-The application should now be running at `http://localhost:3000`.
+The application should now be running at `http://localhost:3000` `http://localhost:4000`.
 
 ### Connecting to MetaMask
 
