@@ -27,7 +27,7 @@ If loaded on the home screen where you enter the address and amount , you can en
 
 ![ezgif com-video-to-gif (6)](https://github.com/CodeNameNoah/TipJar/assets/128002901/ce70cda0-92a7-4e41-80a1-1ef7642ecd9e)
 
-![ezgif com-video-to-gif (7)](https://github.com/CodeNameNoah/TransCrypt/assets/128002901/89ee3413-0051-4900-aedc-db2650cddd69)
+![ezgif com-video-to-gif (7)](https://github.com/CodeNameNoah/TipJar/assets/128002901/89ee3413-0051-4900-aedc-db2650cddd69)
 
 ### Sending a Tip
 
@@ -51,14 +51,14 @@ To run the GraphQL server, use the command: `node server.js`. The server will st
 
 ### Disconnecting from MetaMask
 
-If you want to disconnect your MetaMask account from TransCrypt, follow these steps:
+If you want to disconnect your MetaMask account from TipJar, follow these steps:
 
 1. Open the MetaMask extension. You should see your account details.
 2.  Click on "Connected". This will open a new page showing a list of all the websites your MetaMask wallet is currently connected to.
 3.  Click on the 3 dots on the account you wish to disconnect and then proceed to disconnect.
-4.  Your MetaMask account should now be disconnected from TransCrypt. If you want to connect again in the future, you'll need to go through the connection process again.
+4.  Your MetaMask account should now be disconnected from TipJar. If you want to connect again in the future, you'll need to go through the connection process again.
 
-![ezgif com-video-to-gif (8)](https://github.com/CodeNameNoah/TransCrypt/assets/128002901/9bac5a76-593a-4077-ab0a-209cc590fe3e)
+![ezgif com-video-to-gif (8)](https://github.com/CodeNameNoah/TipJar/assets/128002901/9bac5a76-593a-4077-ab0a-209cc590fe3e)
 
 ## Future Improvements
 
@@ -73,6 +73,6 @@ We welcome contributions from the community. If you have a feature request, bug 
 
 ## License
 
-TransCrypt is open-source software licensed under the MIT license.
+TipJar is open-source software licensed under the MIT license.
 
-Enjoy using TransCrypt! We hope it makes your Ethereum tipping experience more enjoyable and efficient.
+Enjoy using TipJar! We hope it makes your Ethereum tipping experience more enjoyable and efficient.
