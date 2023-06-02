@@ -47,6 +47,8 @@ http://localhost:3000/?address=0x123...abc
 In this example, `0x123...abc` should be replaced with the actual Ethereum address of the recipient. When a user clicks on this link, 
 the Ethereum address is automatically filled in, saving the user the trouble of having to manually input it.
 
+![ezgif com-video-to-gif (11)](https://github.com/CodeNameNoah/TipJar/assets/128002901/3f235c40-04f9-4b90-a0f8-91b35980a9ae)
+
 ### Running the GraphQL Server
 
 To run the GraphQL server, use the command: `node server.js`. The server will start on `http://localhost:4000/graphql`.
