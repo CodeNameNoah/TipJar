@@ -49,9 +49,18 @@ the Ethereum address is automatically filled in, saving the user the trouble of 
 
 To run the GraphQL server, use the command: `node server.js`. The server will start on `http://localhost:4000/graphql`.
 
+### Disconnecting from MetaMask
+
+If you want to disconnect your MetaMask account from TransCrypt, follow these steps:
+
+1. Open the MetaMask extension. You should see your account details.
+2.  Click on "Connected". This will open a new page showing a list of all the websites your MetaMask wallet is currently connected to.
+3.  Click on the 3 dots on the account you wish to disconnect and then proceed to disconnect.
+4.  Your MetaMask account should now be disconnected from TransCrypt. If you want to connect again in the future, you'll need to go through the connection process again.
+
 ## Future Improvements
 
-We're always looking to make TipCreator better and more efficient. Some potential future improvements include:
+We're always looking to make TransCrypt better and more efficient. Some potential future improvements include:
 
 - Integration with other Ethereum wallets.
 - Support for tipping in ERC-20 tokens.
