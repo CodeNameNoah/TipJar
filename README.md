@@ -15,8 +15,8 @@ TipJar is a robust and user-friendly decentralized application (dApp) built on E
 
 1. Clone the repository: `git clone https://github.com/CodeNameNoah/TipJar.git`
 2. Install the dependencies: `npm install`
-3. cd client: 'npm install'
-4. cd server: npm install'
+3. cd client: `npm install`
+4. cd server: `npm install`
 5. In root directory start the application: `npm run dev`
    
 The application should now be running at `http://localhost:3000` `http://localhost:4000`.
