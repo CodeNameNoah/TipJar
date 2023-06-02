@@ -1,5 +1,20 @@
 # TipJar: Ethereum Tipping Made Simple
 
+# Table of Contents
+
+- [TipJar: Ethereum Tipping Made Simple](#tipjar-ethereum-tipping-made-simple)
+  * [Features](#features)
+  * [How To Use](#how-to-use)
+    + [Installation](#installation)
+    + [Connecting to MetaMask](#connecting-to-metamask)
+    + [Sending a Tip](#sending-a-tip)
+    + [Using a Link with a URL Parameter](#using-a-link-with-a-url-parameter)
+    + [Running the GraphQL Server](#running-the-graphql-server)
+    + [Disconnecting from MetaMask](#disconnecting-from-metamask)
+  * [Future Improvements](#future-improvements)
+  * [Contributing](#contributing)
+  * [License](#license)
+
 TipJar is a robust and user-friendly decentralized application (dApp) built on Ethereum and React.js that simplifies the process of sending tips in Ether. With an intuitive interface and seamless integration with MetaMask, it provides a quick and easy way for users to tip one another for their contributions.
 
 ## Features
