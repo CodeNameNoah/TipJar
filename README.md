@@ -50,7 +50,6 @@ We're always looking to make TipCreator better and more efficient. Some potentia
 
 - Integration with other Ethereum wallets.
 - Support for tipping in ERC-20 tokens.
-- A system for storing and displaying the history of tips a user has sent or received.
 
 ## Contributing
 
