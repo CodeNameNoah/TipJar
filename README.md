@@ -13,7 +13,7 @@ TransCrypt is a robust and user-friendly decentralized application (dApp) built 
 
 ### Installation
 
-1. Clone the repository: `git clone https://github.com/YourGitHubUsername/TransCrypt.git`
+1. Clone the repository: `git clone https://github.com/CodeNameNoah/TransCrypt.git`
 2. Install the dependencies: `npm install`
 3. Start the application: `npm start`
    
