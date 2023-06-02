@@ -34,6 +34,8 @@ If loaded on the home screen where you enter the address and amount , you can en
 Once connected, you can input the Ethereum address of the recipient and the amount of Ether you want to send as a tip. 
 Clicking on "Send Tip" will prompt you to confirm the transaction in MetaMask.
 
+![ezgif com-video-to-gif (9)](https://github.com/CodeNameNoah/TipJar/assets/128002901/5626ef16-c4b6-44bb-ada3-7bd9914beff6)
+
 ### Using a Link with a URL Parameter
 
 To make it easier for users to send a tip to a specific address, you can include the recipient's address as a URL parameter. 
