@@ -58,6 +58,8 @@ If you want to disconnect your MetaMask account from TransCrypt, follow these st
 3.  Click on the 3 dots on the account you wish to disconnect and then proceed to disconnect.
 4.  Your MetaMask account should now be disconnected from TransCrypt. If you want to connect again in the future, you'll need to go through the connection process again.
 
+![ezgif com-video-to-gif (8)](https://github.com/CodeNameNoah/TransCrypt/assets/128002901/9bac5a76-593a-4077-ab0a-209cc590fe3e)
+
 ## Future Improvements
 
 We're always looking to make TransCrypt better and more efficient. Some potential future improvements include:
