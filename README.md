@@ -2,6 +2,21 @@
 
 TipJar is a robust and user-friendly decentralized application (dApp) built on Ethereum and React.js that simplifies the process of sending tips in Ether. With an intuitive interface and seamless integration with MetaMask, it provides a quick and easy way for users to tip one another for their contributions.
 
+# Table of Contents
+
+- [TipJar: Ethereum Tipping Made Simple](#tipjar-ethereum-tipping-made-simple)
+  * [Features](#features)
+  * [How To Use](#how-to-use)
+    + [Installation](#installation)
+    + [Connecting to MetaMask](#connecting-to-metamask)
+    + [Sending a Tip](#sending-a-tip)
+    + [Using a Link with a URL Parameter](#using-a-link-with-a-url-parameter)
+    + [Running the GraphQL Server](#running-the-graphql-server)
+    + [Disconnecting from MetaMask](#disconnecting-from-metamask)
+  * [Future Improvements](#future-improvements)
+  * [Contributing](#contributing)
+  * [License](#license)
+
 ## Features
 
 - **Easy Connection with MetaMask:** The application uses MetaMask for user authentication and transaction signing, ensuring the security and integrity of the tipping process.
@@ -15,15 +30,19 @@ TipJar is a robust and user-friendly decentralized application (dApp) built on E
 
 1. Clone the repository: `git clone https://github.com/CodeNameNoah/TipJar.git`
 2. Install the dependencies: `npm install`
-3. Start the application: `npm run dev`
+3. cd client: `npm install`
+4. cd server: `npm install`
+5. In root directory start the application: `npm run dev`
+6. **MUST have MetaMask extension installed or else the application will NOT work.**
    
 The application should now be running at `http://localhost:3000` `http://localhost:4000`.
 
 ### Connecting to MetaMask
 
-When you open the application, you will see a button to connect to MetaMask. 
+1. When you open the application, you will see a button to connect to MetaMask. 
 Clicking on this button will prompt you to connect with your MetaMask account.
-If loaded on the home screen where you enter the address and amount , you can enter those fields and then press send tip and it'll give you the direction to connect to MetaMask with our application as well.
+
+2. Most users will be loaded on the home page when you first visit our site. simply just fill in the address and amount fields and click "send tip". A window will pop up for you to connect your MetaMask with our application.
 
 ![ezgif com-video-to-gif (6)](https://github.com/CodeNameNoah/TipJar/assets/128002901/ce70cda0-92a7-4e41-80a1-1ef7642ecd9e)
 
@@ -66,7 +85,7 @@ If you want to disconnect your MetaMask account from TipJar, follow these steps:
 
 ## Future Improvements
 
-We're always looking to make TransCrypt better and more efficient. Some potential future improvements include:
+We're always looking to make TipJar better and more efficient. Some potential future improvements include:
 
 - Integration with other Ethereum wallets.
 - Support for tipping in ERC-20 tokens.
