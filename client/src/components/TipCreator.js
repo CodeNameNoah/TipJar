@@ -147,7 +147,7 @@ const TipCreator = () => {
         }
       }
     } else {
-      setErrorMessage('Non-Ethereum browser detected! Once connected reload the page !');
+      setErrorMessage('Non-Ethereum browser detected! you MUST be connected to MetaMask !');
     }
   };
   
