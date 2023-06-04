@@ -8,6 +8,7 @@ TipJar is a robust and user-friendly decentralized application (dApp) built on E
   * [Features](#features)
   * [How To Use](#how-to-use)
     + [Installation](#installation)
+    + [Live Heroku app](#Live-Heroku-app)
     + [Connecting to MetaMask](#connecting-to-metamask)
     + [Sending a Tip](#sending-a-tip)
     + [Using a Link with a URL Parameter](#using-a-link-with-a-url-parameter)
@@ -37,8 +38,8 @@ TipJar is a robust and user-friendly decentralized application (dApp) built on E
    
 The application should now be running at `http://localhost:3000` `http://localhost:4000`.
 
-OR 
-**HEROKU LIVE DEPLOYMENT**: https://mytipjar.herokuapp.com/
+### Live Heroku app
+https://mytipjar.herokuapp.com/
 
 ### Connecting to MetaMask
 
