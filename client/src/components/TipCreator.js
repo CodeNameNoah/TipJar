@@ -110,6 +110,8 @@ const TipCreator = () => {
   
         // Sign and send the transaction
         const tx = await signer.sendTransaction(transaction);
+
+        alert('Transaction sent! Please check your MetaMask or Etherscan for details.');
   
         // Wait for the transaction to be mined
         const receipt = await tx.wait();
