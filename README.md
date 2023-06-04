@@ -37,6 +37,10 @@ TipJar is a robust and user-friendly decentralized application (dApp) built on E
    
 The application should now be running at `http://localhost:3000` `http://localhost:4000`.
 
+OR 
+
+HEROKU LIVE DEPLOYMENT: https://mytipjar.herokuapp.com/
+
 ### Connecting to MetaMask
 
 1. When you open the application, you will see a button to connect to MetaMask. 
