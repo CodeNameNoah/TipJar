@@ -60,10 +60,10 @@ Clicking on "Send Tip" will prompt you to confirm the transaction in MetaMask.
 To make it easier for users to send a tip to a specific address, you can include the recipient's address as a URL parameter. 
 Here is an example of how to construct such a link:
 
-http://localhost:3000/?address=0x123...abc
+https://mytipjar.herokuapp.com/?address=0x08bE1b402447c12E7Da7D454d77641086878a8D5
 
 
-In this example, `0x123...abc` should be replaced with the actual Ethereum address of the recipient. When a user clicks on this link, 
+In this example, `0x08bE1b402447c12E7Da7D454d77641086878a8D5` should be replaced with the actual Ethereum address of the recipient. When a user clicks on this link, 
 the Ethereum address is automatically filled in, saving the user the trouble of having to manually input it.
 
 ![ezgif com-video-to-gif (11)](https://github.com/CodeNameNoah/TipJar/assets/128002901/3f235c40-04f9-4b90-a0f8-91b35980a9ae)
