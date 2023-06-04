@@ -23,7 +23,7 @@ const SendForm = ({ address, setAddress, amount, setAmount, sendTip }) => {
         Send Tip
       </button>
       <div className="center-container">
-        <a href="https://github.com/CodeNameNoah/TransCrypt#readme" target="_blank" rel="noopener noreferrer" className="help-button">Help?</a>
+        <a href="https://github.com/CodeNameNoah/TipJar#readme" target="_blank" rel="noopener noreferrer" className="help-button">Help?</a>
       </div>
     </div>
   );
