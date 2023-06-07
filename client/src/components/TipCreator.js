@@ -1,13 +1,35 @@
 import React, { useState, useEffect } from 'react';
-import { ApolloClient, InMemoryCache, gql, useMutation } from '@apollo/client';
+
+import { ApolloClient, InMemoryCache, gql, useMutation, createHttpLink } from '@apollo/client';
+import { setContext } from '@apollo/client/link/context';
 import ConnectLink from './ConnectLink';
 import SendForm from './SendForm';
 
+
 // Initialize Apollo Client
-const client = new ApolloClient({
+const httpLink = createHttpLink({
   uri: 'http://localhost:4000/graphql', // replace with your GraphQL server URL
-  cache: new InMemoryCache()
 });
+
+
+// Create an Apollo Link that adds the Authorization header with the JWT token
+const authLink = setContext((_, { headers }) => {
+  const token = localStorage.getItem('token');
+  return {
+    headers: {
+      ...headers,
+      Authorization: token ? `Bearer ${token}` : '',
+    },
+  };
+});
+
+
+
+const client = new ApolloClient({
+  link: authLink.concat(httpLink),
+  cache: new InMemoryCache(),
+});
+
 
 // Define your mutation
 const CREATE_TIP = gql`
@@ -158,6 +180,7 @@ const TipCreator = () => {
   return (
     <div className="container">
       <h1>TipJar</h1>
+      
       {errorMessage && <div className="error">{errorMessage}</div>} {/* Display the error message if there is one */}
       {!connected ? (
         <ConnectLink connectToMetaMask={connectToMetaMask} />

@@ -4,7 +4,7 @@ const ConnectLink = ({ connectToMetaMask }) => {
   return (
     <div>
       <a href="#" className="link-button" onClick={connectToMetaMask}>
-        Connect to MetaMask
+        Authenticate Account
       </a>
       <div className="center-container">
         <a href="https://github.com/CodeNameNoah/TipJar#readme" target="_blank" rel="noopener noreferrer" className="help-button">Help?</a>

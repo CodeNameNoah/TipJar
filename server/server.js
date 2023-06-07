@@ -5,6 +5,9 @@ const tipRoutes = require('./routes/tipRoutes');
 //const authenticationMiddleware = require('./middleware/authentication');
 const { ApolloServer, gql } = require('apollo-server-express');
 const Tip = require('./models/Tip'); // import your Mongoose Tip model
+const router = express.Router();
+const authenticationMiddleware = require('./middleware/authentication');
+const authRoutes = require('./routes/authRoutes');
 
 // Connect to MongoDB using Mongoose
 mongoose
