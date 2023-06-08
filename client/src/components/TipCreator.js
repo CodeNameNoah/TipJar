@@ -148,8 +148,9 @@ const TipCreator = () => {
                 recipient: address,
                 amount: parseFloat(amount)  // Ensure the amount is a number
               },
-
+              
             });
+            console.log('result', result)
 
 
             // If the mutation was successful, inform the user

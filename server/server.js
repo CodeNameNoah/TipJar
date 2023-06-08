@@ -11,7 +11,6 @@ const authenticationMiddleware = require('./middleware/authentication');
 const authRoutes = require('./routes/authRoutes');
 
 // Connect to MongoDB using Mongoose
-mongoose
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/tip-creator')
   .then(() => {
     console.log('Connected to MongoDB');
@@ -50,8 +49,9 @@ const resolvers = {
   },
   Mutation: {
     createTip: async (_, { recipient, amount }) => {
-      const newTip = new Tip({ recipient, amount });
-      await newTip.save();
+      const newTip = await Tip.create({recipient, amount})
+      /*const newTip = new Tip({ recipient, amount });
+      await newTip.save();*/
       return newTip;
     },
   },
@@ -63,7 +63,7 @@ const server = new ApolloServer({ typeDefs, resolvers });
 
 // Middleware
 app.use(express.json());
-//app.use(authenticationMiddleware); // Protects all subsequent routes
+
 
 // Start the Apollo Server and apply middleware to Express app
 server.start().then(() => {
