@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import { ApolloClient, InMemoryCache, gql, useMutation, createHttpLink } from '@apollo/client';
+import { ApolloClient, InMemoryCache, gql, useMutation, createHttpLink, ApolloProvider } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import ConnectLink from './ConnectLink';
 import SendForm from './SendForm';
@@ -8,7 +8,8 @@ import SendForm from './SendForm';
 
 // Initialize Apollo Client
 const httpLink = createHttpLink({
-  uri: 'http://localhost:4000/graphql', // replace with your GraphQL server URL
+  uri: '/graphql',
+   // replace with your GraphQL server URL
 });
 
 
@@ -137,7 +138,7 @@ const TipCreator = () => {
   
         // Wait for the transaction to be mined
         const receipt = await tx.wait();
-  
+  console.log('receipt', receipt)
         // If the transaction was successful, save the tip in the database
         if (receipt.status === 1) {
           try {
@@ -147,7 +148,9 @@ const TipCreator = () => {
                 recipient: address,
                 amount: parseFloat(amount)  // Ensure the amount is a number
               },
+
             });
+
 
             // If the mutation was successful, inform the user
       if (result.data) {
@@ -159,6 +162,9 @@ const TipCreator = () => {
             // Handle any errors from the mutation
             console.error('An error occurred while saving the tip: ', error);
           }
+        }
+        else{
+          console.log('failed')
         }
       } catch (error) {
         // Check if the error is due to insufficient funds
@@ -178,6 +184,7 @@ const TipCreator = () => {
   
   
   return (
+    <ApolloProvider client={client}>
     <div className="container">
       <h1>TipJar</h1>
       
@@ -194,6 +201,7 @@ const TipCreator = () => {
         />
       )}
     </div>
+    </ApolloProvider>
   );
 };
 

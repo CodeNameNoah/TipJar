@@ -1,4 +1,5 @@
 const express = require('express');
+require('dotenv').config();
 const mongoose = require('mongoose');
 const jwt = require('jsonwebtoken');
 const tipRoutes = require('./routes/tipRoutes');
@@ -11,10 +12,7 @@ const authRoutes = require('./routes/authRoutes');
 
 // Connect to MongoDB using Mongoose
 mongoose
-  .connect('mongodb://localhost:27017/tip-creator', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/tip-creator')
   .then(() => {
     console.log('Connected to MongoDB');
   })
