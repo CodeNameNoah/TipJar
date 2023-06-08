@@ -48,17 +48,17 @@ Clicking on this button will prompt you to connect with your MetaMask account.
 
 2. Most users will be loaded on the home page when you first visit our site. simply just fill in the address and amount fields and click "send tip". A window will pop up for you to connect your MetaMask with our application.
 
-![ezgif com-video-to-gif (6)](https://github.com/CodeNameNoah/TipJar/assets/128002901/ce70cda0-92a7-4e41-80a1-1ef7642ecd9e)
+![ezgif com-video-to-gif (6)](https://github.com/CodeNameNoah/TipJar/assets/128002901/63447017-ac4f-457a-be08-16e689f04931)
 
-
-![ezgif com-video-to-gif (7)](https://github.com/CodeNameNoah/TipJar/assets/128002901/89ee3413-0051-4900-aedc-db2650cddd69)
+![ezgif com-video-to-gif (7)](https://github.com/CodeNameNoah/TipJar/assets/128002901/408d0349-a9a1-4440-b6cf-e5836793e481)
 
 ### Sending a Tip
 
 Once connected, you can input the Ethereum address of the recipient and the amount of Ether you want to send as a tip. 
 Clicking on "Send Tip" will prompt you to confirm the transaction in MetaMask.
 
-![ezgif com-video-to-gif (10)](https://github.com/CodeNameNoah/TipJar/assets/128002901/912f4650-86c5-46c6-9a27-28dbda15419f)
+![ezgif com-video-to-gif (10)](https://github.com/CodeNameNoah/TipJar/assets/128002901/0fde2354-7f04-4f06-8ae5-91689f2788d0)
+
 
 ### Using a Link with a URL Parameter
 
@@ -71,7 +71,8 @@ https://mytipjar.herokuapp.com/?address=0x08bE1b402447c12E7Da7D454d77641086878a8
 In this example, `0x08bE1b402447c12E7Da7D454d77641086878a8D5` should be replaced with the actual Ethereum address of the recipient. When a user clicks on this link, 
 the Ethereum address is automatically filled in, saving the user the trouble of having to manually input it.
 
-![ezgif com-video-to-gif (11)](https://github.com/CodeNameNoah/TipJar/assets/128002901/3f235c40-04f9-4b90-a0f8-91b35980a9ae)
+![ezgif com-video-to-gif (11)](https://github.com/CodeNameNoah/TipJar/assets/128002901/5ffcd087-80d1-4dc2-a893-ff509e2f095c)
+
 
 ### Running the GraphQL Server
 
@@ -86,7 +87,7 @@ If you want to disconnect your MetaMask account from TipJar, follow these steps:
 3.  Click on the 3 dots on the account you wish to disconnect and then proceed to disconnect.
 4.  Your MetaMask account should now be disconnected from TipJar. If you want to connect again in the future, you'll need to go through the connection process again.
 
-![ezgif com-video-to-gif (8)](https://github.com/CodeNameNoah/TipJar/assets/128002901/9bac5a76-593a-4077-ab0a-209cc590fe3e)
+![ezgif com-video-to-gif (8)](https://github.com/CodeNameNoah/TipJar/assets/128002901/c1b83f5b-caf7-4fba-b86b-75429bc969ea)
 
 ## Future Improvements
 
