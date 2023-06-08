@@ -1,51 +1,15 @@
 import React, { useState, useEffect } from 'react';
-
-import { ApolloClient, InMemoryCache, gql, useMutation, createHttpLink, ApolloProvider } from '@apollo/client';
-import { setContext } from '@apollo/client/link/context';
 import ConnectLink from './ConnectLink';
 import SendForm from './SendForm';
+import { CREATE_TIP } from '../utils/mutations';
+import { useMutation } from '@apollo/client';
 
-
-// Initialize Apollo Client
-const httpLink = createHttpLink({
-  uri: '/graphql',
-   // replace with your GraphQL server URL
-});
-
-
-// Create an Apollo Link that adds the Authorization header with the JWT token
-const authLink = setContext((_, { headers }) => {
-  const token = localStorage.getItem('token');
-  return {
-    headers: {
-      ...headers,
-      Authorization: token ? `Bearer ${token}` : '',
-    },
-  };
-});
-
-
-
-const client = new ApolloClient({
-  link: authLink.concat(httpLink),
-  cache: new InMemoryCache(),
-});
-
-
-// Define your mutation
-const CREATE_TIP = gql`
-  mutation CreateTip($recipient: String!, $amount: Float!) {
-    createTip(recipient: $recipient, amount: $amount) {
-      id
-    }
-  }
-`;
 
 const TipCreator = () => {
   const [connected, setConnected] = useState(false);
   const [address, setAddress] = useState('');
   const [amount, setAmount] = useState('');
-  const [createTip, { data }] = useMutation(CREATE_TIP, { client });
+  const [createTip, { error, data }] = useMutation(CREATE_TIP);
   const [errorMessage, setErrorMessage] = useState(''); 
   // New state variable for error messages
 
@@ -182,10 +146,9 @@ const TipCreator = () => {
     }
   };
   
-  
+ 
   
   return (
-    <ApolloProvider client={client}>
     <div className="container">
       <h1>TipJar</h1>
       
@@ -202,7 +165,6 @@ const TipCreator = () => {
         />
       )}
     </div>
-    </ApolloProvider>
   );
 };
 
