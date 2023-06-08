@@ -50,6 +50,7 @@ Clicking on this button will prompt you to connect with your MetaMask account.
 
 ![ezgif com-video-to-gif (6)](https://github.com/CodeNameNoah/TipJar/assets/128002901/ce70cda0-92a7-4e41-80a1-1ef7642ecd9e)
 
+
 ![ezgif com-video-to-gif (7)](https://github.com/CodeNameNoah/TipJar/assets/128002901/89ee3413-0051-4900-aedc-db2650cddd69)
 
 ### Sending a Tip
