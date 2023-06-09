@@ -6,12 +6,10 @@ import { setContext } from '@apollo/client/link/context';
 
 
 
-const localHttpLink = createHttpLink({
+// Initialize Apollo Client
+const httpLink = createHttpLink({
   uri: 'http://localhost:4000/graphql',
-});
-
-const remoteHttpLink = createHttpLink({
-  uri: 'http://mytipjar.herokuapp.com/graphql',
+   // replace with your GraphQL server URL
 });
 
 // Create an Apollo Link that adds the Authorization header with the JWT token
@@ -28,7 +26,7 @@ const authLink = setContext((_, { headers }) => {
 
 
 const client = new ApolloClient({
-  link: authLink.concat(localHttpLink), 
+  link: authLink.concat(httpLink),
   cache: new InMemoryCache(),
 });
 
