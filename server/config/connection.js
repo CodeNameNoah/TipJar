@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 require('dotenv').config();
 
 // Connect to MongoDB using Mongoose
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/tip-creator')
+mongoose.connect(process.env.MONGODB_URI )
   .then(() => {
     console.log('Connected to MongoDB');
   })
