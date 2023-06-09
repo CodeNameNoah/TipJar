@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require('path');
 const tipRoutes = require('./routes/tipRoutes');
 const { ApolloServer } = require('apollo-server-express');
 const router = express.Router();
@@ -40,6 +41,10 @@ const startApolloServer = async () => {
 // Routes
 app.use('/api/tips', tipRoutes);
 
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, './client/public/index.html'));
+});
 // Start the server
 /*app.listen(PORT, () => {
   console.log(`Server listening on http://localhost:${PORT}`);
