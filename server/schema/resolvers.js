@@ -1,4 +1,5 @@
-const {Tip} = require("../models/Tip")
+const Tip = require("../models/Tip")
+
 
 const resolvers = {
     Query: {

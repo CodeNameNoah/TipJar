@@ -30,7 +30,7 @@ const startApolloServer = async () => {
   })
   };
 
-  startApolloServer;
+  startApolloServer();
 
 // Start the Apollo Server and apply middleware to Express app
 /*server.start().then(() => {
