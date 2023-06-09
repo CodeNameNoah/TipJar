@@ -35,12 +35,12 @@ const startApolloServer = async () => {
 // Start the Apollo Server and apply middleware to Express app
 /*server.start().then(() => {
  server.applyMiddleware({ app });
-});
+});*/
 
 // Routes
 app.use('/api/tips', tipRoutes);
 
 // Start the server
-app.listen(PORT, () => {
+/*app.listen(PORT, () => {
   console.log(`Server listening on http://localhost:${PORT}`);
 });*/
