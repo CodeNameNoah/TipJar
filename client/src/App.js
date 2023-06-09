@@ -11,7 +11,7 @@ const localHttpLink = createHttpLink({
 });
 
 const remoteHttpLink = createHttpLink({
-  uri: 'https://mytipjar.herokuapp.com/graphql',
+  uri: 'http://mytipjar.herokuapp.com/graphql',
 });
 
 // Create an Apollo Link that adds the Authorization header with the JWT token
